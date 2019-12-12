@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SendMessage</string>
+    <string name="txt_message">Mensaje de texto a enviar</string>
+    <string name="btnEnviar">Enviar</string>
+
+
+</resources>

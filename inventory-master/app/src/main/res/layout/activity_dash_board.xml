@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".iu.DashBoardActivity"
+    android:padding="@dimen/tlDashBoardPadding"
+    android:stretchColumns="0,1">
+
+    <TableRow
+        android:layout_weight="1"
+        android:padding="10dp">
+
+        <ImageButton
+            android:id="@+id/btninventario"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_inventario"
+            android:layout_margin="20dp"/>
+<!--Las dependencias es la localizacion del producto-->
+        <ImageButton
+            android:id="@+id/btndependencias"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_location"
+            android:layout_margin="20dp"/>
+    </TableRow>
+
+    <TableRow android:layout_weight="1"
+        android:padding="10dp">
+
+        <!--Las seccion/sector es en la localizacion del producto en que estante esta situado o pasillo-->
+        <ImageButton
+            android:id="@+id/btnseccion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_seccion"
+            android:layout_margin="20dp"/>
+
+        <ImageButton
+            android:id="@+id/btnproducto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_producto"
+            android:layout_margin="20dp"/>
+    </TableRow>
+
+<!--Perfil y ajustes-->
+    <TableRow android:layout_weight="1"
+        android:padding="10dp">
+        <ImageButton
+            android:id="@+id/btnperfil"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_perfil"
+            android:layout_margin="20dp"/>
+
+        <ImageButton
+            android:id="@+id/btnajustes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_ajustes"
+            android:layout_margin="20dp"/>
+    </TableRow>
+
+</TableLayout>

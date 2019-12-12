@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="errUserEmty">Name user emty</string>
+    <string name="errPassword">Error patern</string>
+    <string name="errEmail">Error Email</string>
+</resources>

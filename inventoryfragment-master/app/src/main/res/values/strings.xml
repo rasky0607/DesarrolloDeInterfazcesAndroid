@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">InventoryFragment</string>
+    <!--Login-->
+    <string name="tvUser">User</string>
+    <string name="tvPassword">Password</string>
+    <string name="chRemember">Remember me</string>
+    <string name="btSignUp">Sign Up</string>
+    <string name="btSignIn">Sign In</string>
+    <string name="btGoogle">Google</string>
+    <string name="btFacebook">Facebook</string>
+    <string name="btTwitter">Twitter</string>
+    <string name="OrtherSign">Other Sign.</string>
+
+    <!--Sing Up-->
+    <string name="nameUser">Name User.</string>
+    <string name="password">Password.</string>
+    <string name="passwordConfrim">Confirm password .</string>
+    <string name="email">Email.</string>
+    <string name="btnSingUp">Sing Up.</string>
+    <string name="edImage">Imagen</string>
+    <string name="tvInventory">Año inventario</string>
+    <string name="edShortName">Nombre corto</string>
+    <string name="edName">Nombre</string>
+    <string name="edDescription">Descripción</string>
+</resources>

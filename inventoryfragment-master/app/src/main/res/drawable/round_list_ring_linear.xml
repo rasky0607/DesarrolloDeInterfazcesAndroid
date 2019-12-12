@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="15dp"/>
+            <solid android:color="@color/colorAccent">
+            </solid>
+            <size android:height="50dp" android:width="300dp">
+
+            </size>
+
+        </shape>
+    </item>
+
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="ring"
+            android:innerRadiusRatio="3"
+            android:thicknessRatio="6"
+            android:useLevel="false">
+            <!--color del boton -->
+            <solid android:color="@color/colorPrimary">
+            </solid>
+            <!--Redondeado del boton -->
+            <corners android:radius="15dp"></corners>
+            <!--Color degradado (Gradientes) se pinta de derecha a izquierda-->
+            <gradient android:type="sweep"
+                android:startColor="@color/colorPrimary"
+                android:endColor="@color/colorAccent"/>
+                <!-- Obligatorio para el typo radial android:gradientRadius="60%"
+                Es el por centaje que va ocupar el centro"donde empieza StarColor-->
+                <!--android:centerColor="@color/textColorWhite"-->
+
+
+
+        </shape>
+    </item>
+</layer-list>

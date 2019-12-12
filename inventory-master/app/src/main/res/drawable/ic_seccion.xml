@@ -1,0 +1,25 @@
+<vector android:height="58dp" android:viewportHeight="512"
+    android:viewportWidth="512" android:width="58dp"
+    xmlns:aapt="http://schemas.android.com/aapt" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:pathData="M256,256m-256,0a256,256 0,1 1,512 0a256,256 0,1 1,-512 0">
+        <aapt:attr name="android:fillColor">
+            <gradient android:endX="512" android:endY="256"
+                android:startX="3.8E-6" android:startY="256" android:type="linear">
+                <item android:color="#FF00AEEE" android:offset="0"/>
+                <item android:color="#FF0095DA" android:offset="1"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path android:pathData="M256,469.334c-117.631,0 -213.333,-95.702 -213.333,-213.333c0,-117.631 95.702,-213.333 213.333,-213.333c117.636,0 213.333,95.702 213.333,213.333C469.333,373.631 373.636,469.334 256,469.334z">
+        <aapt:attr name="android:fillColor">
+            <gradient android:endX="469.33334" android:endY="256.00052"
+                android:startX="42.666668" android:startY="256.00052" android:type="linear">
+                <item android:color="#FF0095DA" android:offset="0"/>
+                <item android:color="#FF00AEEE" android:offset="1"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path android:fillAlpha="0.3" android:fillColor="#FF000000"
+        android:pathData="M360.225,330.923v-37.941h-91.226v-46.666c25.977,-2.515 46.285,-24.396 46.285,-51.031C315.285,166.961 292.324,144 264,144s-51.285,22.961 -51.285,51.284c0,26.636 20.309,48.516 46.284,51.031v46.666h-91.226v37.941h-21.538V384h53.076v-53.077h-21.539v-27.941h81.226v27.941h-21.538V384h53.076v-53.077h-21.539v-27.941h81.226v27.941H328.688V384h53.076v-53.077H360.225z" android:strokeAlpha="0.3"/>
+    <path android:fillColor="#FFFFFF" android:pathData="M352.225,322.923v-37.941h-91.226v-46.666c25.977,-2.515 46.285,-24.396 46.285,-51.031C307.285,158.961 284.324,136 256,136s-51.285,22.961 -51.285,51.284c0,26.636 20.309,48.516 46.284,51.031v46.666h-91.226v37.941h-21.538V376h53.076v-53.077h-21.539v-27.941h81.226v27.941h-21.538V376h53.076v-53.077h-21.539v-27.941h81.226v27.941H320.688V376h53.076v-53.077H352.225z"/>
+</vector>

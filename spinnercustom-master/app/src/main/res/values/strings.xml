@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CustomSpinner</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+    <string name="twitter">Twitter</string>
+    <string name="a">aaaa</string>
+    <string name="b">bbb</string>
+</resources>

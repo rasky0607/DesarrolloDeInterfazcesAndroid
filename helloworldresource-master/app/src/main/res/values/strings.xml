@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">HelloWorldResource</string>
+    <string name="Phrase">Be water my friend</string>
+    <string name="PhrasePesimista">Me cago en tu estampa</string>
+</resources>

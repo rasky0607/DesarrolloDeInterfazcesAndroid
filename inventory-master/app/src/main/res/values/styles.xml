@@ -1,0 +1,47 @@
+<resources>
+
+    <!--Estilos Login-->
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <!--Herencia de temas y ademas que herede los colocres de AppTheme-->
+    <style name="AppTheme.SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--para aplicar este estilo haremos refrencia a el en el archivo manifiest en la activity que aplicara dicho tema
+        es decir:"android:theme="@style/SplashTheme">"-->
+
+
+    </style>
+
+    <!--Vamos a crear una serie de estilos a través de la herencia(realmente estamos sobreescribiendo el estilo general de los Widget-->
+    <style name="Widget" parent="@android:style/Widget">
+
+    </style>
+    <!--Ejemplo de herencia (Si nos fijamos, estos do sultimos estilos realmente heredan de Widget-->
+
+    <style name="Widget.Button">
+        <item name="android:textColor">@android:color/white</item>
+        <!--La ? no es mas que una referencia a donde apunta ya que dicho atributo al que se haga referencia puede tener varios valores-->
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+
+    </style>
+
+    <style name="Widget.Button.Transparent">
+        <item name="android:background">@null</item>
+    </style>
+
+    <!--Cambiar el color del checkbox-->
+    <style name="CheckBoxLogin">
+        <item name="android:buttonTint">@color/colorPrimaryDark</item>
+    </style>
+<!--Fin estilos Login-->
+
+    <!--Inicio estilos sing_up-->
+    <style name="Widget.TextInputError">
+        <item name="android:textColor">@color/TextInputError</item>
+
+    </style>
+</resources>

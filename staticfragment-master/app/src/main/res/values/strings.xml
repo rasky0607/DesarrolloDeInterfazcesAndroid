@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">staticfragment</string>
+    <string name="micdata">
+        <![CDATA[
+        <h4>Aqui estamos listando:</h4>
+        <ul>
+        <li>Palotes.</li>
+        <li> Max.</li>
+        <li> Con Suelo.. es decur Consuelo.</li>
+        <li>etc..</li>
+        </ul>
+
+]]>
+
+    </string>
+</resources>

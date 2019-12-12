@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/clSingUpPaddin"
+    tools:context=".iu.SingUpActivity">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiNameUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="146dp"
+        android:layout_margin="@dimen/tinputlayoutMargin"
+        app:errorTextAppearance="@style/Widget.TextInputError">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tieNameUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nameUser" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tipassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tiNameUser"
+        tools:layout_editor_absoluteX="160dp"
+        android:layout_margin="@dimen/tinputlayoutMargin"
+        app:passwordToggleEnabled="true"
+        app:counterMaxLength="15"
+        app:counterEnabled="true"
+        app:errorEnabled="true"
+        app:errorTextAppearance="@style/Widget.TextInputError">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiepassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="@string/password" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiemail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tipassword"
+        app:errorEnabled="true"
+        android:layout_margin="@dimen/tinputlayoutMargin"
+        tools:layout_editor_absoluteX="160dp"
+        app:errorTextAppearance="@style/Widget.TextInputError">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tieemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="@string/email" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btSingUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnSingUp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tiemail"
+        android:background="@drawable/selector_round_corner"
+        android:textColor="@color/textColorWhite"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
