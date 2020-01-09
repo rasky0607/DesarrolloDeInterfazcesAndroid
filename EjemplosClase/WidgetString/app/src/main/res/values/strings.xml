@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">WidgetString</string>
+    <string-array name="empleados">
+        <item>1 - 5</item>
+        <item>6 - 20</item>
+        <item>21 - 50</item>
+        <item>51 - 100</item>
+        <item>101 - 200</item>
+        <item>201 - 500</item>
+    </string-array>
+</resources>

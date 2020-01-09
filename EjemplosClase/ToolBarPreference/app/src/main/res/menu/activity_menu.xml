@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="Añadir" app:showAsAction="always" android:id="@+id/action_anadir" android:icon="@android:drawable/ic_menu_add" />
+    <item android:title="Editar" app:showAsAction="ifRoom" android:id="@+id/action_edit" android:icon="@android:drawable/ic_menu_edit" />
+    <item android:title="Ajustes" app:showAsAction="never" android:id="@+id/action_setting" />
+    <item android:title="About Us" app:showAsAction="never" android:id="@+id/action_about" />
+</menu>
