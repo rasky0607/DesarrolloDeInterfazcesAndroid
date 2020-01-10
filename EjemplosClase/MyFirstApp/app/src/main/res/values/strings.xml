@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My First App</string>
+    <string name="lucario">Este es lucario</string>
+    <string name="mi_lucario">Mi Lucario</string>
+    <string name="pkmnGO">I Play Pokemon GO</string>
+    <string name="pulsador">Oh.... Has pulsado la foto :O</string>
+</resources>
