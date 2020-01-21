@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".layout.login.LoginActivity"
+    android:orientation="vertical"
+    android:padding="@dimen/generalPadding">
+
+    <TextView
+        android:id="@+id/tvLoginAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space20sp"
+        android:text="@string/iniciar_sesion"
+        android:textSize="@dimen/title40sp" />
+
+    <TextView
+        android:id="@+id/tvLoginUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/usuario_correo"
+        android:textSize="@dimen/normalSize17sp"/>
+
+    <EditText
+        android:id="@+id/edLoginUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/usuario_correo"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="@dimen/space20sp" />
+
+    <TextView
+        android:id="@+id/tvLoginPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/contrasenia"
+        android:textSize="@dimen/normalSize17sp"/>
+
+    <EditText
+        android:id="@+id/edLoginPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/contrasenia"
+        android:inputType="textPassword"
+        android:layout_marginBottom="@dimen/space20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/space20sp">
+
+        <Switch
+            android:id="@+id/swLoginRemember"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/recuerdame"
+            android:layout_weight="1"
+            android:textSize="@dimen/normalSize17sp"/>
+
+        <Button
+            android:id="@+id/btnLoginRegister"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/registrarse"
+            android:textSize="@dimen/normalSize17sp"
+            style="@style/TransparentButton"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnLoginLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/iniciar_sesion"
+        android:layout_marginBottom="@dimen/space10sp"
+        android:textColor="@color/primaryTextColor"
+        android:background="@drawable/selector_round"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/tvLoginOtherSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/o_inicia_sesion_con"
+        android:textSize="@dimen/normalSize17sp"
+        android:layout_marginBottom="@dimen/space10sp"/>
+
+    <Button
+        android:id="@+id/btnLoginTelegram"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_telegram_logo"
+        android:text="@string/iniciar_con_telegram"
+        android:textColor="@color/primaryTextColor"
+        android:background="@drawable/shape_button_telegram_round"
+        android:layout_marginBottom="@dimen/space10sp"/>
+
+    <Button
+        android:id="@+id/btnLoginGoogle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_google_logo"
+        android:background="@drawable/shape_button_google_round"
+        android:text="Iniciar con Google"
+        android:layout_marginBottom="@dimen/space10sp"/>
+
+</LinearLayout>

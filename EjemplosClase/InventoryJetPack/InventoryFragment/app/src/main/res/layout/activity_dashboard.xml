@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".layout.dash.DashboardActivity"
+    android:stretchColumns="0,1"
+    android:background="@color/primaryLightColor">
+    <TableRow android:layout_weight="1">
+
+        <ImageButton
+            android:id="@+id/btnDashInventory"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/inventario"
+            android:src="@drawable/inventorypng"
+            android:scaleType="fitCenter"
+            android:padding="40dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/shape_round_dash"
+            android:textColor="@color/primaryTextColor"
+            android:layout_margin="15dp"/>
+
+        <ImageButton
+            android:id="@+id/btnDashDependency"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/dependencias"
+            android:src="@drawable/dependency"
+            android:scaleType="fitCenter"
+            android:padding="40dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/shape_round_dash"
+            android:textColor="@color/primaryTextColor"
+            android:layout_margin="15dp"/>
+    </TableRow>
+    <View android:layout_height="2dp" android:background="@color/primaryLightColor"/>
+    <TableRow android:layout_weight="1">
+
+        <ImageButton
+            android:id="@+id/btnDashSectors"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/sectores"
+            android:src="@drawable/sector"
+            android:scaleType="fitCenter"
+            android:padding="40dp"
+            android:adjustViewBounds="true"
+            android:textColor="@color/primaryTextColor"
+            android:background="@drawable/shape_round_dash"
+            android:layout_margin="15dp"/>
+
+        <ImageButton
+            android:id="@+id/btnDashProducts"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/productos"
+            android:src="@drawable/product"
+            android:scaleType="fitCenter"
+            android:padding="40dp"
+            android:adjustViewBounds="true"
+            android:textColor="@color/primaryTextColor"
+            android:background="@drawable/shape_round_dash"
+            android:layout_margin="15dp"/>
+    </TableRow>
+    <View android:layout_height="2dp" android:background="@color/primaryLightColor"/>
+    <TableRow android:layout_weight="1">
+
+        <ImageButton
+            android:id="@+id/btnDashProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/perfil"
+            android:src="@drawable/profile"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:padding="40dp"
+            android:background="@drawable/shape_round_dash"
+            android:textColor="@color/primaryTextColor"
+            android:layout_margin="15dp"/>
+
+        <ImageButton
+            android:id="@+id/btnDashSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/ajustes"
+            android:src="@drawable/settings"
+            android:scaleType="fitCenter"
+            android:padding="40dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/shape_round_dash"
+            android:textColor="@color/primaryTextColor"
+            android:layout_margin="15dp"/>
+    </TableRow>
+
+</TableLayout>

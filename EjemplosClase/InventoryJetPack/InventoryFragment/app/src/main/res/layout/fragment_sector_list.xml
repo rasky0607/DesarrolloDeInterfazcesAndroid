@@ -1,0 +1,30 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="es.pablolopez.InventoryJetPack.layout.sector.SectorListView" >
+
+    <include
+        android:id="@+id/fragmentLoadingSectorList"
+        layout="@layout/fragment_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerSectorList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabSectorList"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:clickable="true"
+        android:src="@drawable/ic_action_add"
+        android:layout_gravity="bottom|end"
+        android:elevation="2dp"
+        android:layout_margin="16dp"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
