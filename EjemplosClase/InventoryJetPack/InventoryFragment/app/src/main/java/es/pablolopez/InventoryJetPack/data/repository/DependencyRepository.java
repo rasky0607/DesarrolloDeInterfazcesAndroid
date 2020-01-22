@@ -1,22 +1,30 @@
 package es.pablolopez.InventoryJetPack.data.repository;
 
-import java.util.ArrayList;
+import android.os.AsyncTask;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import es.pablolopez.InventoryJetPack.data.dao.DependencyDao;
+import es.pablolopez.InventoryJetPack.data.dao.InventoryDatabase;
 import es.pablolopez.InventoryJetPack.data.model.Dependency;
 
 public class DependencyRepository {
     private static DependencyRepository instance;
-    private ArrayList<Dependency> list;
+    //private ArrayList<Dependency> list;
+    private DependencyDao dependencyDao;
+
 
     /*static {
         instance = new DependencyRepository();
     }*/
 
     public DependencyRepository() {
-        initialice();
+        //initialice();
+        dependencyDao = InventoryDatabase.getDatabase().dependencyDao();
     }
 
-    private void initialice() {
+   /* private void initialice() {
         list = new ArrayList<>();
         list.add(new Dependency("2º Ciclo de Grado Superior", "2ºCFGS", "Aula de informatica","2018","S"));
         list.add(new Dependency("1º Ciclo de Grado Superior", "1ºCFGS", "Aula de informatica","2019","S"));
@@ -29,7 +37,7 @@ public class DependencyRepository {
         list.add(new Dependency("2º Bachillerato", "2ºBACH", "Bachillerato","2018","B"));
         list.add(new Dependency("1º Bachillerato", "1ºBACH", "Bachillerato","2018","B"));
 
-    }
+    }*/
 
     public static DependencyRepository getInstance(){
         if (instance == null){
@@ -38,46 +46,49 @@ public class DependencyRepository {
         return instance;
     }
 
-    public ArrayList<Dependency> getDependencies(){
-        return  list;
+    //getAll //TODO PENDIENTE
+    public List<Dependency> getDependencies(){
+        //return  dependencyDao.getAll();
+      return  new QueryAsynTask().execute().get();
+
     }
 
-    public boolean add(final Dependency dependency) {
-        if (list.stream().noneMatch(x-> x.getShortname().equals(dependency.getShortname()))) {
-            list.add(dependency);
-            return true;
-        }
-        return false;
+    //Añadir
+   public void add(final Dependency dependency) {
+       InventoryDatabase.databaseWriteExecutor.execute(()->dependencyDao.instert(dependency));
+    }
+    //Editar
+    public void edit(Dependency dependency) {
+        InventoryDatabase.databaseWriteExecutor.execute(()->dependencyDao.update(dependency));
     }
 
-    public boolean edit(Dependency dependency) {
-            for (Dependency it : list) {
-                if (it.getShortname().equals(dependency.getShortname())) {
-                    it.setName(dependency.getName());
-                    it.setDescription(dependency.getDescription());
-                    return true;
-                }
-            }
-            return false;
+    //Eliminar
+    public void delete(Dependency dependency) {
+        InventoryDatabase.databaseWriteExecutor.execute(()->dependencyDao.delete(dependency));
     }
 
-    public boolean delete(Dependency dependency) {
-        return list.remove(list.stream().filter(x->x.getShortname().equals(dependency.getShortname())).findFirst().get());
-    }
-
-    public Dependency get(int pos) {
-        return list.get(pos);
+    public Dependency get(Dependency dependency) {
+        return dependencyDao.findByShortName(dependency.getShortname());
     }
 
     public int getPositionDependency(Dependency dependency) {
         int i = 0;
-
-        for (Dependency s : list){
-            if (s.getShortname().equals(dependency.getShortname())){
+        List<Dependency> list = dependencyDao.getAll();
+        for (Dependency item : list){
+            if (item.getShortname().equals(dependency.getShortname())){
                 return i;
             }
             i++;
         }
         return -1;
+    }
+
+
+    private  class  QueryAsynTask extends AsyncTask<Void,Void,List<Dependency>>{
+
+        @Override
+        protected List<Dependency> doInBackground(Void... voids) {
+            return dependencyDao.getAll();
+        }
     }
 }

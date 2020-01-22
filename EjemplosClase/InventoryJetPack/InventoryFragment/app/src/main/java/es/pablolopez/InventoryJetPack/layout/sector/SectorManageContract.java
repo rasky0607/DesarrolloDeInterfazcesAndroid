@@ -1,6 +1,7 @@
 package es.pablolopez.InventoryJetPack.layout.sector;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import es.pablolopez.InventoryJetPack.data.model.Dependency;
 import es.pablolopez.InventoryJetPack.data.model.Sector;
@@ -8,7 +9,7 @@ import es.pablolopez.InventoryJetPack.layout.base.BaseView;
 
 public interface SectorManageContract {
     interface View extends BaseView<Presenter> {
-        void onSuccessLoadSpinner(ArrayList<Dependency> dependencies);
+        void onSuccessLoadSpinner(List<Dependency> dependencies);
         void onErrorLoadSpinner(String error);
         void onErrorValidate(String error);
 

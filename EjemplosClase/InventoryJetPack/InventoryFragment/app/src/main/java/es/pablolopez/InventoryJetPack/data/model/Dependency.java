@@ -3,6 +3,7 @@ package es.pablolopez.InventoryJetPack.data.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
@@ -14,7 +15,7 @@ public class Dependency implements Parcelable {
     @Ignore
     public static final String TAG = "dependency";
 
-    @PrimaryKey
+    @PrimaryKey @NonNull
     private String shortname;
     @ColumnInfo
     private String name;
@@ -22,9 +23,11 @@ public class Dependency implements Parcelable {
     private String inventory;
     private String UriImage;
 
+    @Ignore
     public Dependency() {
     }
 
+    //Este constructor es el unico que no ignoramos con la libreria room
     public Dependency(String name, String shortname, String description, String inventory, String uriImage) {
         this.name = name;
         this.shortname = shortname;
@@ -33,6 +36,7 @@ public class Dependency implements Parcelable {
         this.UriImage = uriImage;
     }
 
+    @Ignore
     protected Dependency(Parcel in) {
         name = in.readString();
         shortname = in.readString();
