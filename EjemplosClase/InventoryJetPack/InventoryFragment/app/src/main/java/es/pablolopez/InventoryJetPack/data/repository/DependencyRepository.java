@@ -50,6 +50,7 @@ public class DependencyRepository {
     //getAll o getList
     public List<Dependency> getDependencies(){
         try {
+            //Este get Devuelve la lista una vez es obtenida despues de que finalice el summit(), si no fuera de este forma volveria un objeto Future
             return InventoryDatabase.databaseWriteExecutor.submit(() -> dependencyDao.getAll()).get();
         } catch (ExecutionException e) {
             e.printStackTrace();
