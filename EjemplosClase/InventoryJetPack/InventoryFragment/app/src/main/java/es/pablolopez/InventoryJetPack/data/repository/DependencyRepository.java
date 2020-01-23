@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import es.pablolopez.InventoryJetPack.data.dao.DependencyDao;
 import es.pablolopez.InventoryJetPack.data.dao.InventoryDatabase;
@@ -46,25 +47,34 @@ public class DependencyRepository {
         return instance;
     }
 
-    //getAll //TODO PENDIENTE
+    //getAll o getList
     public List<Dependency> getDependencies(){
-        //return  dependencyDao.getAll();
-      return  new QueryAsynTask().execute().get();
+        try {
+            return InventoryDatabase.databaseWriteExecutor.submit(() -> dependencyDao.getAll()).get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return null;
 
     }
 
-    //Añadir
-   public void add(final Dependency dependency) {
+    //Añadir en la Bd una dependencia
+   public boolean add(final Dependency dependency) {
        InventoryDatabase.databaseWriteExecutor.execute(()->dependencyDao.instert(dependency));
+       return true;
     }
-    //Editar
-    public void edit(Dependency dependency) {
+    //Editar en la Bd una dependencia
+    public boolean edit(Dependency dependency) {
         InventoryDatabase.databaseWriteExecutor.execute(()->dependencyDao.update(dependency));
+        return true;
     }
 
-    //Eliminar
-    public void delete(Dependency dependency) {
+    //Eliminar en la Bd una dependencia
+    public boolean delete(Dependency dependency) {
         InventoryDatabase.databaseWriteExecutor.execute(()->dependencyDao.delete(dependency));
+        return true;
     }
 
     public Dependency get(Dependency dependency) {
@@ -83,12 +93,14 @@ public class DependencyRepository {
         return -1;
     }
 
-
+//Clase interna para añadir hilo para las Query o consultas
     private  class  QueryAsynTask extends AsyncTask<Void,Void,List<Dependency>>{
 
+    //añadido  hilo - tarea para optener la lista de la BD de datos
         @Override
         protected List<Dependency> doInBackground(Void... voids) {
             return dependencyDao.getAll();
         }
     }
+
 }

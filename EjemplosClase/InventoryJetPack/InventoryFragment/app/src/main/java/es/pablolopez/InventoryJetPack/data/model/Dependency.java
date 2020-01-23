@@ -21,7 +21,7 @@ public class Dependency implements Parcelable {
     private String name;
     private String description;
     private String inventory;
-    private String UriImage;
+    private String uriImage;
 
     @Ignore
     public Dependency() {
@@ -33,7 +33,7 @@ public class Dependency implements Parcelable {
         this.shortname = shortname;
         this.description = description;
         this.inventory = inventory;
-        this.UriImage = uriImage;
+        this.uriImage = uriImage;
     }
 
     @Ignore
@@ -42,7 +42,7 @@ public class Dependency implements Parcelable {
         shortname = in.readString();
         description = in.readString();
         inventory = in.readString();
-        UriImage = in.readString();
+        uriImage = in.readString();
     }
 
     public static final Creator<Dependency> CREATOR = new Creator<Dependency>() {
@@ -82,11 +82,11 @@ public class Dependency implements Parcelable {
     }
 
     public String getUriImage() {
-        return UriImage;
+        return uriImage;
     }
 
     public void setUriImage(String uriImage) {
-        UriImage = uriImage;
+        this.uriImage = uriImage;
     }
 
     public String getInventory() {
@@ -113,6 +113,6 @@ public class Dependency implements Parcelable {
         dest.writeString(shortname);
         dest.writeString(description);
         dest.writeString(inventory);
-        dest.writeString(UriImage);
+        dest.writeString(uriImage);
     }
 }

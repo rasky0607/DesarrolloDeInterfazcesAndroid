@@ -33,36 +33,14 @@ public class DependencyListPresenter implements DependencyListContract.Presenter
 
     @Override
     public void load() {
-        new AsyncTask<Void,Void, List<Dependency>>(){
-
-            @Override
-            protected List<Dependency> doInBackground(Void... voids) {
-                try {
-                    Thread.sleep(3000);
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-                return DependencyRepository.getInstance().getDependencies();
-            }
-
-            @Override
-            protected void onPreExecute() {
-                view.showLoadingProgress();
-            }
-
-            @Override
-            protected void onPostExecute(List<Dependency> dependencies) {
-                super.onPostExecute(dependencies);
-                view.hideLoading();
-                if (!dependencies.isEmpty()){
-                    view.showData(dependencies);
-                }else {
-                    view.showNoDependency();
-                }
-            }
-
-
-        }.execute();
+        view.showLoadingProgress();
+        List<Dependency> dependencies = DependencyRepository.getInstance().getDependencies();
+        if (dependencies.isEmpty()){
+            view.showNoDependency();
+        }else{
+            view.showData(dependencies);
+        }
+        view.hideLoading();
 
     }
 

@@ -23,6 +23,7 @@ public class DependencyManagePresenter implements DependencyManageContract.Prese
     public void add(Dependency dependency) {
         if (DependencyRepository.getInstance().add(dependency)){
             view.onSuccess("Dependencia Añadida: "+ dependency.getShortname());
+
         }else {
             view.showError("No se puede añadir la dependencia.");
         }
@@ -35,9 +36,7 @@ public class DependencyManagePresenter implements DependencyManageContract.Prese
 
     @Override
     public boolean isValidDependency(String name, String shortName, String description) {
-
         return checkName(name) & checkShortName(shortName) & checkDescription(description);
-
     }
 
     private boolean checkName(String name){

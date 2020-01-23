@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -19,6 +20,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Collection;
+import java.util.List;
 
 import es.pablolopez.InventoryJetPack.R;
 import es.pablolopez.InventoryJetPack.adapter.DependencyAdapter;
@@ -148,7 +150,8 @@ public class DependencyListView extends Fragment implements DependencyListContra
     }
 
     @Override
-    public void showData(Collection<Dependency> dependencies) {
+    public void showData(List<Dependency> dependencies) {
+        Log.d("AQUI"," elementos:"+dependencies.get(0));
         adapter.clear();
         adapter.addAll(dependencies);
         adapter.notifyDataSetChanged();

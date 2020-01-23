@@ -1,5 +1,6 @@
 package es.pablolopez.InventoryJetPack.adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,6 +57,7 @@ public class DependencyAdapter extends RecyclerView.Adapter<DependencyAdapter.De
 
     public void addAll(Collection<Dependency> dependencies) {
         this.list.addAll(dependencies);
+        Log.d("AQUI ", "el primer elemento "+this.list.get(0));
     }
 
     public void delete(Dependency deleted) {

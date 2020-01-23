@@ -1,6 +1,7 @@
 package es.pablolopez.InventoryJetPack.layout.dependency;
 
 import java.util.Collection;
+import java.util.List;
 
 import es.pablolopez.InventoryJetPack.data.model.Dependency;
 import es.pablolopez.InventoryJetPack.layout.base.BaseView;
@@ -10,7 +11,7 @@ public interface DependencyListContract {
         void showLoadingProgress();
         void hideLoading();
         void showNoDependency();
-        void showData(Collection<Dependency> dependencies);
+        void showData(List<Dependency> dependencies);
         void onSuccessDelete();
 
     }

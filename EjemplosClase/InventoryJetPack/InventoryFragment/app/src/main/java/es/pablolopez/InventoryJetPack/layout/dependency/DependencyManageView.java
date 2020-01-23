@@ -20,6 +20,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import es.pablolopez.InventoryJetPack.R;
 import es.pablolopez.InventoryJetPack.data.model.Dependency;
 
+/** class dependency Create and Edit*/
 public class DependencyManageView extends Fragment implements DependencyManageContract.View{
 
     private onSaveListener listener;
