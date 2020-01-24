@@ -17,7 +17,7 @@ public class Dependency implements Parcelable {
 
     @PrimaryKey @NonNull
     private String shortname;
-    @ColumnInfo
+    @ColumnInfo @NonNull
     private String name;
     private String description;
     private String inventory;

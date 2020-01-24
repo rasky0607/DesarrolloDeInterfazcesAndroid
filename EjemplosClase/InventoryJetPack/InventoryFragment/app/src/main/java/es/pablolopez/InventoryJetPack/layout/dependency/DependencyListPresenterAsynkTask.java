@@ -1,17 +1,15 @@
 package es.pablolopez.InventoryJetPack.layout.dependency;
 
-import android.os.AsyncTask;
-
 import java.util.List;
 
 import es.pablolopez.InventoryJetPack.data.model.Dependency;
 import es.pablolopez.InventoryJetPack.data.repository.DependencyRepository;
 
-public class DependencyListPresenter implements DependencyListContract.Presenter {
+public class DependencyListPresenterAsynkTask implements DependencyListContract.Presenter {
 
     private DependencyListContract.View view;
 
-    public DependencyListPresenter(DependencyListContract.View view) {
+    public DependencyListPresenterAsynkTask(DependencyListContract.View view) {
         this.view = view;
     }
 

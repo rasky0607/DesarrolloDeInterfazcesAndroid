@@ -1,7 +1,11 @@
 package es.pablolopez.InventoryJetPack.data.repository;
 
-import java.util.ArrayList;
+import android.os.AsyncTask;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import es.pablolopez.InventoryJetPack.data.model.Dependency;
 import es.pablolopez.InventoryJetPack.data.model.Sector;
 
 public class SectorRepository {
@@ -50,6 +54,16 @@ public class SectorRepository {
             }
         }
         return false;
+    }
+
+    //Clase interna para añadir hilo para las Query o consultas
+    private  class  QueryAsynTask extends AsyncTask<Void,Void, List<Sector>> {
+
+        //añadido  hilo - tarea para optener la lista de la BD de datos
+        @Override
+        protected List<Sector> doInBackground(Void... voids) {
+            return null;
+        }
     }
 
 }

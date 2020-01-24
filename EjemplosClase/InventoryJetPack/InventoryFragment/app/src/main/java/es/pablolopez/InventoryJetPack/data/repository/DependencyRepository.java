@@ -1,6 +1,9 @@
 package es.pablolopez.InventoryJetPack.data.repository;
 
 import android.os.AsyncTask;
+import android.util.Log;
+
+import androidx.room.OnConflictStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,10 +50,11 @@ public class DependencyRepository {
         return instance;
     }
 
-    //getAll o getList
+    //getAll o getList // ssummit para hacerlo rapido sin comprobaciones, AsynTask para  hacerlo con comprobaciones
     public List<Dependency> getDependencies(){
         try {
             //Este get Devuelve la lista una vez es obtenida despues de que finalice el summit(), si no fuera de este forma volveria un objeto Future
+            //summit devuelve un valo a diferencia de execute
             return InventoryDatabase.databaseWriteExecutor.submit(() -> dependencyDao.getAll()).get();
         } catch (ExecutionException e) {
             e.printStackTrace();
@@ -63,6 +67,10 @@ public class DependencyRepository {
 
     //Añadir en la Bd una dependencia
    public boolean add(final Dependency dependency) {
+        //En estas sentencias Lambdas si usamos un "execute", podemos usar encolar varias sentencias de codigo en caso de "submit" NO.
+       /**
+        *   InventoryDatabase.databaseWriteExecutor.execute(()->dependencyDao.instert(dependency));
+        *                                                       dependencyDao.update(dependency))*/
        InventoryDatabase.databaseWriteExecutor.execute(()->dependencyDao.instert(dependency));
        return true;
     }
@@ -94,13 +102,29 @@ public class DependencyRepository {
         return -1;
     }
 
-//Clase interna para añadir hilo para las Query o consultas
+//Clase -Tarea asincrona interna para añadir hilo para las Query o consultas que devuelve toda la lista de dependencias
     private  class  QueryAsynTask extends AsyncTask<Void,Void,List<Dependency>>{
-
     //añadido  hilo - tarea para optener la lista de la BD de datos
         @Override
         protected List<Dependency> doInBackground(Void... voids) {
             return dependencyDao.getAll();
+        }
+    }
+
+    //Clase-Tarea asincrona interna para añadir hilo para las Inserciones para insertar una nueva dependencias y o gestionar  el  resultado de esta
+    private  class  InsertAsyncTasck extends AsyncTask<Dependency,Void,Long>{
+
+        @Override
+        protected Long doInBackground(Dependency... dependency) {
+            Long result = dependencyDao.instert(dependency[0]);
+
+            //Gestionamos el  resultado de la insercion en caso de devolver una excepcion que ignoramos.
+            //Este -1 es de la definicion de sqlite, es lo que devuelve al lanzar un error  sqlite normalmente por contraint
+            //Aborto entra en  los catch, pero ignore , solo entra en los finaly , en los dos casos devuelve  -1
+            if(result==-1){
+                dependencyDao.update(dependency[0]);
+            }
+            return null;
         }
     }
 

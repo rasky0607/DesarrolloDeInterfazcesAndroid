@@ -23,7 +23,7 @@ public abstract class InventoryDatabase extends RoomDatabase {
        public static final ExecutorService databaseWriteExecutor =
                 Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
-      public   static InventoryDatabase getDatabase() {
+      public static InventoryDatabase getDatabase() {
             return INSTANCE;
         }
 

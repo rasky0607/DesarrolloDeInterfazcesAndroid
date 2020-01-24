@@ -3,15 +3,26 @@ package es.pablolopez.InventoryJetPack.data.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class Sector implements Parcelable {
 
     public static final String TAG = "Sector";
+    @PrimaryKey
     private String name;
+    @PrimaryKey
     private String shortname;
+    //Al resto de campos ponermos poner @NonNull solo o @NonNull y @ColumnInfo
+    @NonNull
     private String description;
     private Dependency dependencia;
     private String uriImage;
 
+    @Ignore
     public Sector() {
     }
 
@@ -22,7 +33,7 @@ public class Sector implements Parcelable {
         this.dependencia = dependencia;
         this.uriImage = uriImage;
     }
-
+    @Ignore
     protected Sector(Parcel in) {
         name = in.readString();
         shortname = in.readString();

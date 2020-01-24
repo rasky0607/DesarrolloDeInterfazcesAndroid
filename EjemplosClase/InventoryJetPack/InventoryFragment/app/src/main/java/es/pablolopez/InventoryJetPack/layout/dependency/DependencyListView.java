@@ -151,7 +151,6 @@ public class DependencyListView extends Fragment implements DependencyListContra
 
     @Override
     public void showData(List<Dependency> dependencies) {
-        Log.d("AQUI"," elementos:"+dependencies.get(0));
         adapter.clear();
         adapter.addAll(dependencies);
         adapter.notifyDataSetChanged();

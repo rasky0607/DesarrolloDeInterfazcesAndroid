@@ -15,8 +15,8 @@ import es.pablolopez.InventoryJetPack.data.model.Dependency;
 /*Estamos indicando que es una clase accesible al resto de las clases*/
 @Dao
 public interface DependencyDao {
-    @Insert
-    void instert (Dependency dependency);
+    @Insert(onConflict =OnConflictStrategy.IGNORE )// para ignorar cuando da excepcion(en este caso cuando insertamos dos dependencia con la mima clave)
+    Long instert (Dependency dependency);
     @Delete
     void delete (Dependency dependency);
     @Update

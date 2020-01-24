@@ -1,5 +1,7 @@
 package es.pablolopez.InventoryJetPack.layout.dependency;
 
+import java.util.concurrent.ExecutionException;
+
 import es.pablolopez.InventoryJetPack.data.model.Dependency;
 import es.pablolopez.InventoryJetPack.data.repository.DependencyRepository;
 
@@ -21,12 +23,14 @@ public class DependencyManagePresenter implements DependencyManageContract.Prese
 
     @Override
     public void add(Dependency dependency) {
+
         if (DependencyRepository.getInstance().add(dependency)){
             view.onSuccess("Dependencia Añadida: "+ dependency.getShortname());
 
         }else {
             view.showError("No se puede añadir la dependencia.");
         }
+
     }
 
     @Override
