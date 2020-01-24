@@ -33,4 +33,6 @@
     <string name="ayuda">Ayuda</string>
     <string name="buscar">Buscar</string>
     <string name="compartir">Compartir</string>
+    <string name="channel_name">canal de notificacion</string>
+    <string name="channel_description">Mi notificacion Inventory</string>
 </resources>

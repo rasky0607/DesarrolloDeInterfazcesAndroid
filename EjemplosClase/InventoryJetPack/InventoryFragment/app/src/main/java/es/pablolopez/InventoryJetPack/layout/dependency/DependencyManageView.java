@@ -1,5 +1,6 @@
 package es.pablolopez.InventoryJetPack.layout.dependency;
 
+import android.app.Notification;
 import android.content.Context;
 import android.os.Bundle;
 
@@ -17,6 +18,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import es.pablolopez.InventoryJetPack.InventoryApplication;
 import es.pablolopez.InventoryJetPack.R;
 import es.pablolopez.InventoryJetPack.data.model.Dependency;
 
@@ -149,6 +151,13 @@ public class DependencyManageView extends Fragment implements DependencyManageCo
     @Override
     public void onSuccess(String message) {
         listener.onSaveListener(message);
+
+        /*Notification.Builder builder = new Notification.Builder(this, InventoryApplication.CHANNEL_ID).setAutoCancel(true)
+                .setSmallIcon(R.drawable.inventory).setContentText("mi notificacion").setContentTitle("My notification");*/
+
+
+
+
     }
 
     @Override
