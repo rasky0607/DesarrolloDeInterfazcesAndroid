@@ -196,6 +196,7 @@ public class SectorManageView extends Fragment implements SectorManageContract.V
         activityListener.onSave();
     }
 
+
     public interface OnSectorManageListener {
         void onSave();
     }

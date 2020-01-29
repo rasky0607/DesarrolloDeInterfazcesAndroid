@@ -8,7 +8,7 @@ public interface DependencyManageContract {
         void showNameEmptyError(String error);
         void showShortNameEmptyError(String error);
         void showDescriptionEmptyError(String error);
-
+        void onSuccess(String message,Dependency dependency);
         void clearNameError();
         void clearShortnameError();
         void clearDescriptionError();

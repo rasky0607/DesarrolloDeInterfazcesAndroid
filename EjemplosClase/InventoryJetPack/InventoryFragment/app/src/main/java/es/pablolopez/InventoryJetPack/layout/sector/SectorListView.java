@@ -21,6 +21,7 @@ import java.util.ArrayList;
 
 import es.pablolopez.InventoryJetPack.R;
 import es.pablolopez.InventoryJetPack.adapter.SectorAdapter;
+import es.pablolopez.InventoryJetPack.data.model.Dependency;
 import es.pablolopez.InventoryJetPack.data.model.Sector;
 import es.pablolopez.InventoryJetPack.layout.base.BaseDialogFragment;
 
@@ -175,6 +176,7 @@ public class SectorListView extends Fragment implements SectorListContract.View,
     public void onSuccess(String message) {
 
     }
+
 
     @Override
     public void onAccept() {

@@ -1,11 +1,15 @@
 package es.pablolopez.InventoryJetPack.layout.dependency;
 
 import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -17,6 +21,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.Random;
 
 import es.pablolopez.InventoryJetPack.InventoryApplication;
 import es.pablolopez.InventoryJetPack.R;
@@ -32,6 +38,8 @@ public class DependencyManageView extends Fragment implements DependencyManageCo
     private TextInputLayout tilShortName, tilName, tilDescription;
     private Spinner spinner;
     private FloatingActionButton fabSave;
+    //Id o flag para notificacion que puede lanzar esta vista
+    private  final int ID_NOTIFICACION=25;
 
     public DependencyManageView() {
         // Required empty public constructor
@@ -150,10 +158,39 @@ public class DependencyManageView extends Fragment implements DependencyManageCo
 
     @Override
     public void onSuccess(String message) {
+
+    }
+
+    @Override
+    public void onSuccess(String message,Dependency dependency) {
         listener.onSaveListener(message);
 
-        /*Notification.Builder builder = new Notification.Builder(this, InventoryApplication.CHANNEL_ID).setAutoCancel(true)
-                .setSmallIcon(R.drawable.inventory).setContentText("mi notificacion").setContentTitle("My notification");*/
+           /*Un pendingIntent tiene un objeto Intent en su interior
+        que define lo que se quiere ejecutar cuando se pulse la notificacion*/
+        Intent intent =new Intent(getActivity(),DependencyActivity.class);
+        intent.putExtra("NOTIFICATION",true);
+        intent.addFlags((Intent.FLAG_ACTIVITY_NEW_TASK));
+        Bundle bundle = new Bundle();
+        bundle.putParcelable(Dependency.TAG,dependency);
+        //Se crea el objeto pendinIntent
+        PendingIntent pendingIntent =PendingIntent.getActivity(getActivity(),0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+
+        //Lanzamos la notificacion
+        Notification.Builder builder = new Notification.Builder(getActivity(), InventoryApplication.CHANNEL_ID)
+                .setAutoCancel(true)
+                .setSmallIcon(R.drawable.inventory)
+                .setContentText("mi notificacion")
+                .setContentTitle("My notification")
+                .setContentIntent(pendingIntent);
+
+        /*Cuando se pulse sobre la notificacion, se debe abrir la  activity dependency "DependencyActivity
+        * que de alguna manera determinara que debe iniciar el fragment DependencyManagerFragment*/
+
+        NotificationManagerCompat notificationManagerCompat=  NotificationManagerCompat.from(getActivity());
+        notificationManagerCompat.notify(ID_NOTIFICACION,builder.build());
+        getActivity().onBackPressed();
+
+        /*Cuando tenemos un fragment que es candiadato a crear mas de una notificacion, usamos BaseFragment*/
 
 
 

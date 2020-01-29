@@ -65,4 +65,12 @@ public class DependencyActivity extends BaseActivity implements DependencyListVi
     public void onSaveListener(String message) {
         onBackPressed();
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        /*Si el intent que recibe tiene un FLGAG NOTIFICACIOn=true*/
+
+        /*LLamadr al metodo showManagerFragment con la dependencia del Intent*/
+    }
 }
