@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ServiceDownloadImage</string>
+    <string name="btStart">Start</string>
+    <string name="btStop">Stop</string>
+</resources>
