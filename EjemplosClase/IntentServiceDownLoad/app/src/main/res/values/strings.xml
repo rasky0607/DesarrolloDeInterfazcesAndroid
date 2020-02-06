@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">IntentServiceDownLoad</string>
+    <string name="iniciarDescarga">iniciar descarga</string>
+</resources>
